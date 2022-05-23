@@ -18,7 +18,23 @@ fn main() -> Result<(),Box<dyn Error>>{
 
     println!("{:#?}",file_contents);
 
+    let number_list: Vec<i32> = vec![120,1230,11,9,187];
+
+    let largest_number: i32 = get_largest(&number_list);
+
+    println!("Largest number: {}",largest_number);
+
     Ok(())
+}
+
+fn get_largest(item_list: &[i32]) -> i32 {
+    let mut largest_num = item_list[0];
+    for &item in item_list {
+        if item > largest_num {
+            largest_num = item;
+        }
+    }
+    largest_num
 }
 // Error handling using Result -> Ok/Err
 fn read_all(ref_text: &str) -> Result<String,io::Error> {
