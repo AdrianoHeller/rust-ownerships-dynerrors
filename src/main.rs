@@ -20,13 +20,13 @@ fn main() -> Result<(),Box<dyn Error>>{
 
     Ok(())
 }
-
+// Error handling using Result -> Ok/Err
 fn read_all(ref_text: &str) -> Result<String,io::Error> {
     let mut string_info = String::new();
     File::open(ref_text)?.read_to_string(&mut string_info)?;
     Ok(string_info)
 }
-
+// Error handling using Option -> Some/None
 fn last_char(ref_text: String) -> Option<char> {
     ref_text.lines().next()?.chars().last()
 }
