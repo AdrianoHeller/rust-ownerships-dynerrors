@@ -7,7 +7,7 @@ fn main() -> Result<(),Box<dyn Error>>{
     let num_a: &str = "12";
 
     let num_b: &str = "150";
-
+    // Aquire ownership to allow concat
     let concat: String = num_a.to_owned() + num_b;
 
     println!("{}",concat);
